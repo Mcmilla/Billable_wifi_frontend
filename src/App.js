@@ -1,22 +1,35 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/page';
-import Hero from './components/Hero/hero';
-import Pricing from './components/Pricing/price';
-import SocialProof from './components/SocialProof/proof';
-import FAQSection from './components/Faq/faq';
+// import AllRoutes from './routes';
+
+import Routes from './Routes'
+
+
+
+// import Routes from 'routes'
+
+// import Routes1 from 'routes'
+
+// import Routes from 'routes'
+// import Hero from './components/Hero/hero';
+// import Pricing from './components/Pricing/price';
+// import SocialProof from './components/SocialProof/proof';
+// import FAQSection from './components/Faq/faq';
 import Footer from './components/Footer/footer';
-import Login from './components/auth/active';
-import PaymentPage from './components/Purchase/purchase'; 
-import AdminDashboard from './dashboards/AdmindashBoard/Dashboard';
+// import PagesLanding from './pages/PagesLanding';
+// import Login from './components/auth/active';
+// import PaymentPage from './components/Purchase/purchase'; 
+// import AdminDashboard from './dashboards/AdmindashBoard/Dashboard';
+
 
 
 function App() {
   return (
     <div className="bg-gray-200 pt-16">
       <Navbar />
-      <Routes>
-        <Route
+      {/* <Routes> */}
+        {/* <Route
           path="/"
           element={
             <>
@@ -28,13 +41,20 @@ function App() {
               
             </>
           }
-        />
-        <Route path="/payment" element={<PaymentPage />} /> {/* Route ya kufanya payment */}
+        /> */}
+        {/* <Route path="/payment" element={<PaymentPage />} /> */}
 
         {/* Admin Dashboard Route */}
-        <Route path="/admin" element={<AdminDashboard />} /> {/* Admin Dashboard route */}
-      </Routes>
+        {/* <Route path="/admin" element={<AdminDashboard />} />  */}
+
+      {/* </Routes> */}
+      
+      <Routes/>
+      
+      
       <Footer />
+    
+
     </div>
   );
 }
