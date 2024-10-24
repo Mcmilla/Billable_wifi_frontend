@@ -18,7 +18,7 @@ const AdminLayout = () => {
         <HorizontalBar />
         
         {/* Render the nested admin routes below the horizontal bar */}
-        <Box style={{flexGrow:1}} marginTop={10}>
+        <Box style={{flexGrow:1}} marginTop={12} marginBottom={2} marginLeft={3} marginRight={3 } sx={{backgroundColor:"#fff", padding:12, borderRadius:6,height:"60vh"}}>
           <Outlet />
         </Box>
       </Box>
