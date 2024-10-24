@@ -1,58 +1,58 @@
 import './App.css';
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/page';
-// import AllRoutes from './routes';
 
-import Routes from './Routes'
-
-
-
-// import Routes from 'routes'
-
-// import Routes1 from 'routes'
-
-// import Routes from 'routes'
-// import Hero from './components/Hero/hero';
-// import Pricing from './components/Pricing/price';
-// import SocialProof from './components/SocialProof/proof';
-// import FAQSection from './components/Faq/faq';
 import Footer from './components/Footer/footer';
-// import PagesLanding from './pages/PagesLanding';
-// import Login from './components/auth/active';
-// import PaymentPage from './components/Purchase/purchase'; 
-// import AdminDashboard from './dashboards/AdmindashBoard/Dashboard';
+import AdminLayout from './Layout/AdminLayout';
+import Users from './views/dashboards/AdmindashBoard/User';
 
+import PagesLanding from './pages/PagesLanding'
+import AdminDashboard from './views/dashboards/AdmindashBoard/Dashboard';
+import Vendors from './views/dashboards/AdmindashBoard/Vendor';
+import AccessCodes from './views/dashboards/AdmindashBoard/AccessCode';
+import {ThemeProvider} from './contexts/ThemeContext'
 
 
 function App() {
+  const location =useLocation();
+  const isAdminRoute=location.pathname.startsWith('/admin')
+
   return (
-    <div className="bg-gray-200 pt-16">
-      <Navbar />
-      {/* <Routes> */}
-        {/* <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Pricing />
-              <Login />
-              <SocialProof />
-              <FAQSection />
-              
-            </>
-          }
-        /> */}
-        {/* <Route path="/payment" element={<PaymentPage />} /> */}
+    <div className="bg-gray-200 ">
 
-        {/* Admin Dashboard Route */}
-        {/* <Route path="/admin" element={<AdminDashboard />} />  */}
+      <ThemeProvider>
 
-      {/* </Routes> */}
-      
-      <Routes/>
+      {!isAdminRoute &&  <Navbar />}
       
       
-      <Footer />
+      
+      <Routes>
+      <Route path='/' element={<PagesLanding/>}/>
+       
+        
+      {/* <Route path="/admin" element={<DashboardRoutes />} /> */}
+      <Route path='/admin' element={<AdminLayout/>}>
+      <Route path='dashboard' element={<AdminDashboard/>}/>
+      <Route path='users' element={<Users/>}/>
+      <Route path='vendors' element={<Vendors/>}/>
+      <Route path='access-codes' element={<AccessCodes/>}/>
+
+      </Route>
+        
+
+      </Routes>
+
+    {!isAdminRoute &&  <Footer />}
+
+    </ThemeProvider>
+      
+      
+    
+      
+      
+     
+      
     
 
     </div>
