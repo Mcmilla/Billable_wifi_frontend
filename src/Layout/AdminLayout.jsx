@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';  // Your sidebar component
 import HorizontalBar from './HorizontalBar';  // Horizontal bar (header) for the admin section
-import { Box } from '@mui/material';
+import { Box, Card } from '@mui/material';
 
 
 const AdminLayout = () => {
@@ -18,9 +18,10 @@ const AdminLayout = () => {
         <HorizontalBar />
         
         {/* Render the nested admin routes below the horizontal bar */}
-        <Box style={{flexGrow:1}} marginTop={12} marginBottom={2} marginLeft={3} marginRight={3 } sx={{backgroundColor:"#fff", padding:12, borderRadius:6,height:"60vh"}}>
+        <Box style={{flexGrow:1}} marginTop={12} marginBottom={2} marginLeft={3} marginRight={3 } sx={{  borderRadius:6,}}>
           <Outlet />
         </Box>
+       
       </Box>
     </Box>
   );
