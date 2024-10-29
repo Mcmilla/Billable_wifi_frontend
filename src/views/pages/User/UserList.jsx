@@ -216,7 +216,7 @@ const UserList = () => {
           <CardContent sx={{ backgroundColor: '#f9f9f9' }}>
             <ul>
               <li>Session</li>
-              <li>P</li>
+              <li>Payement </li>
             
             </ul>
           </CardContent>
