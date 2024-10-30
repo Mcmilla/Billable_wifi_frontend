@@ -1,14 +1,8 @@
 import React from 'react'
 
 const CreateUser = () => {
-
-
-
   return (
-    <div>create user </div>
-    
-
-    
+    <div>CreateUser</div>
   )
 }
 
