@@ -15,29 +15,47 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="mb-12 mt-6">
-      <h2 className="text-center text-3xl font-bold text-gray-700 mb-8">
+    <section id="pricing" className="py-16 px-6 sm:px-8 lg:px-10 bg-gradient-to-br from-gray-100 to-blue-50">
+      {/* Section Title */}
+      <h2 className="text-center text-3xl md:text-4xl font-extrabold text-gray-800 mb-16 tracking-tight animate-fadeIn">
         Choose a Wi-Fi Package to Get Connected
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {packages.map((packag, index) => (
           <div
             key={index}
-            className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-blue-50"
+            className="bg-white rounded-lg shadow-lg text-center p-6 sm:p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105 cursor-pointer ease-in-out"
+            onClick={() => handlePurchase(packag)}
           >
-            <div className="mb-4">
-              <h3 className="text-xl font-semibold text-gray-800 tracking-wide uppercase">{packag.title}</h3>
-              <div className="flex justify-center items-center mt-2">
-                <span className="text-4xl font-extrabold text-indigo-600">KSH</span>
-                <span className="text-6xl font-bold text-gray-900 ml-1">{packag.price}</span>
+            <div className="relative z-10 p-4 bg-white rounded-t-lg">
+              {/* Package Title */}
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 uppercase tracking-wide mb-4 transition-all duration-300">
+                {packag.title}
+              </h3>
+
+              {/* Price Display */}
+              <div className="flex justify-center items-end mb-4">
+                <span className="text-2xl font-bold text-indigo-600 animate-pulse">KSH</span>
+                <span className="text-5xl font-extrabold text-gray-900 ml-1">{packag.price}</span>
               </div>
-              <p className="mt-3 p-2 rounded-full bg-indigo-100 text-indigo-600">{packag.duration}</p>
+
+              {/* Duration */}
+              <p className="mt-3 text-indigo-700 bg-indigo-100 px-3 py-1 sm:px-4 sm:py-2 rounded-full inline-block text-sm sm:text-base transition-all duration-300 transform hover:scale-110">
+                {packag.duration}
+              </p>
             </div>
+
+            {/* Purchase Button */}
             <button
-              className="mt-6 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105"
-              onClick={() => handlePurchase(packag)} // Call the navigation function here
+              className="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-b-lg transition-all duration-300 hover:bg-indigo-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-300"
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePurchase(packag);
+              }}
             >
-              Purchase
+              Purchase Now
             </button>
           </div>
         ))}
