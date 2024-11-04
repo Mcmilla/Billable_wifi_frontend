@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-700 to-purple-700 text-white shadow-lg fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white shadow-lg fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         
         {/* Logo and title */}
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className={`flex-col md:flex-row md:flex items-center ${isOpen ? 'block' : 'hidden'} md:block`}>
           <a 
             href="tel:+25469603394" 
-            className="flex items-center text-lg mt-4 md:mt-0 md:ml-6 px-4 py-2 transition-all transform hover:scale-105 hover:bg-indigo-600 rounded-lg"
+            className="flex items-center text-lg mt-4 md:mt-0 md:ml-6 px-4 py-2 transition-all transform hover:scale-105 hover:bg-purple-800 rounded-lg"
           >
             <PhoneIcon className="h-6 w-6 text-white mr-2 animate-bounce" />
             <span>+254 (769) 603 394</span>

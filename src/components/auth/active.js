@@ -11,7 +11,7 @@ export default function ConnectionLogin() {
   };
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-indigo-100">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-white-50 to-gray-100">
       <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8 transform transition-transform hover:-translate-y-1 duration-200">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-indigo-800 mb-4">Reconnect to the Internet</h2>
         

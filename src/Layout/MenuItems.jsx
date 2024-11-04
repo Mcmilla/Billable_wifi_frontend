@@ -12,7 +12,7 @@ import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 
 const MenuItems = ({activeItem,handleItemClick,iscollapsed}) => {
   const navigate=useNavigate()
-  const {isDarkMode,toggleTheme}=useThemeContext()
+  const {isDarkMode}=useThemeContext()
 
 
     const menuItems = [

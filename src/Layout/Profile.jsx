@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import React from 'react'
-import { Avatar, Box, Card, CardContent} from '@mui/material'
+import { Avatar, Box, CardContent} from '@mui/material'
 
 
 const Profile = ({name, description, avatarUrl}) => {
